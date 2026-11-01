@@ -1,18 +1,43 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Ambientes virtuais
+.venv/
+venv/
+env/
 
-# Other files and folders
-.settings/
+# Python cache e temporários
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# Arquivos auxiliares do LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Documentos locais de aula e planejamento interno
+documentos_aulas/
+PLANEJAMENTO.md
+
+# Arquivos locais da MLP (manter apenas o notebook no repositório)
+MLP/relatorio/
+MLP/scripts/
+MLP/figuras/
+MLP/resultados_experimentos.json
+MLP/relatorio_overleaf.zip
+dados/scripts_preparacao/
+dados/audios_originais
