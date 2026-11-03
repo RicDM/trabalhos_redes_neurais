@@ -8,7 +8,7 @@ Repositório acadêmico desenvolvido para as atividades práticas da disciplina 
 
 ## 🏗️ Estrutura do Repositório
 
-O repositório é organizado para que a base de dados acústicos permaneça centralizada em `dados/dataset/`, permitindo que todas as redes neurais desenvolvidas na disciplina (MLP, RBF, CNN, etc.) acessem diretamente os mesmos dados:
+O repositório é organizado para que a base de dados acústicos permaneça centralizada em `dados/dataset/`, permitindo que todas as redes neurais desenvolvidas na disciplina (MLP, RBF, MRNA etc.) acessem diretamente os mesmos dados:
 
 ```text
 .

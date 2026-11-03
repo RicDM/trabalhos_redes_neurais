@@ -39,5 +39,6 @@ MLP/scripts/
 MLP/figuras/
 MLP/resultados_experimentos.json
 MLP/relatorio_overleaf.zip
+MLP/compilar_relatorio.sh
 dados/scripts_preparacao/
 dados/audios_originais
