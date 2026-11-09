@@ -40,5 +40,13 @@ MLP/figuras/
 MLP/resultados_experimentos.json
 MLP/relatorio_overleaf.zip
 MLP/compilar_relatorio.sh
+
+# Arquivos locais da RBF (manter apenas o notebook no repositório)
+RBF/relatorio/
+RBF/scripts/
+RBF/figuras/
+RBF/resultados_experimentos.json
+RBF/relatorio_overleaf.zip
+RBF/compilar_relatorio.sh
 dados/scripts_preparacao/
 dados/audios_originais
