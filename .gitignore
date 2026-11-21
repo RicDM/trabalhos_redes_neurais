@@ -33,6 +33,10 @@ __pycache__/
 documentos_aulas/
 PLANEJAMENTO.md
 
+# Arquivos locais gerais
+figuras/
+
+
 # Arquivos locais da MLP (manter apenas o notebook no repositório)
 MLP/relatorio/
 MLP/scripts/
