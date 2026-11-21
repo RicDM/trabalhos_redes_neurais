@@ -48,5 +48,13 @@ RBF/figuras/
 RBF/resultados_experimentos.json
 RBF/relatorio_overleaf.zip
 RBF/compilar_relatorio.sh
+
+# Arquivos locais da MRNA (manter apenas o notebook no repositório)
+MRNA/relatorio/
+MRNA/scripts/
+MRNA/figuras/
+MRNA/resultados_experimentos.json
+MRNA/relatorio_overleaf.zip
+MRNA/compilar_relatorio.sh
 dados/scripts_preparacao/
 dados/audios_originais
