@@ -1,0 +1,176 @@
+{
+  "n_amostras": 879,
+  "n_treino": 659,
+  "n_val": 132,
+  "n_test": 88,
+  "decisoes": [
+    {
+      "estagio": 1,
+      "candidata": "Candidata 1 (Base)",
+      "tipo": "MLP (48 neurônios)",
+      "mse_treino": 0.0881904885172844,
+      "acc_val": 68.18181818181817,
+      "acc_teste": 63.63636363636363,
+      "decisao": "ACEITA (Base)"
+    },
+    {
+      "estagio": 2,
+      "candidata": "Candidata 2A",
+      "tipo": "MLP (48 neurônios, zero-init)",
+      "mse_treino": 0.08770398795604706,
+      "acc_val": 68.18181818181817,
+      "acc_teste": 64.77272727272727,
+      "decisao": "REJEITADA"
+    },
+    {
+      "estagio": 2,
+      "candidata": "Candidata 2B",
+      "tipo": "RBF (72 centros)",
+      "mse_treino": 0.06334531307220459,
+      "acc_val": 75.0,
+      "acc_teste": 72.72727272727273,
+      "decisao": "ACEITA (Fuga Platô)"
+    },
+    {
+      "estagio": 3,
+      "candidata": "Candidata 3A",
+      "tipo": "RBF (48 centros, reg=0,05)",
+      "mse_treino": 0.0625443309545517,
+      "acc_val": 75.75757575757575,
+      "acc_teste": 72.72727272727273,
+      "decisao": "REJEITADA"
+    },
+    {
+      "estagio": 3,
+      "candidata": "Candidata 3B",
+      "tipo": "MLP (48 neurônios, zero-init)",
+      "mse_treino": 0.061460841447114944,
+      "acc_val": 78.03030303030303,
+      "acc_teste": 73.86363636363636,
+      "decisao": "ACEITA (Refinamento)"
+    },
+    {
+      "estagio": 4,
+      "candidata": "Candidata 4",
+      "tipo": "RBF (36 centros, reg=0,10)",
+      "mse_treino": 0.06062014400959015,
+      "acc_val": 77.27272727272727,
+      "acc_teste": 73.86363636363636,
+      "decisao": "REJEITADA (Parada)"
+    }
+  ],
+  "classification_report": {
+    "DI": {
+      "precision": 0.7692307692307693,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.7407407407407407,
+      "support": 14.0
+    },
+    "REI": {
+      "precision": 0.42857142857142855,
+      "recall": 0.21428571428571427,
+      "f1-score": 0.2857142857142857,
+      "support": 14.0
+    },
+    "TA": {
+      "precision": 0.7142857142857143,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6896551724137931,
+      "support": 15.0
+    },
+    "ES": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "QUER": {
+      "precision": 0.6666666666666666,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.7777777777777778,
+      "support": 15.0
+    },
+    "DA": {
+      "precision": 0.7222222222222222,
+      "recall": 0.8666666666666667,
+      "f1-score": 0.7878787878787878,
+      "support": 15.0
+    },
+    "accuracy": 0.7386363636363636,
+    "macro avg": {
+      "precision": 0.7168294668294668,
+      "recall": 0.7325396825396826,
+      "f1-score": 0.7136277940875643,
+      "support": 88.0
+    },
+    "weighted avg": {
+      "precision": 0.719509657009657,
+      "recall": 0.7386363636363636,
+      "f1-score": 0.7181823459252926,
+      "support": 88.0
+    }
+  },
+  "multiseed": {
+    "Single MLP (M=1)": {
+      "mean": 64.99999999999999,
+      "std": 1.3252163397375687,
+      "min": 62.5,
+      "max": 67.04545454545455
+    },
+    "Single RBF (M=1)": {
+      "mean": 72.04545454545455,
+      "std": 1.7750567445242387,
+      "min": 69.31818181818183,
+      "max": 75.0
+    },
+    "MRNA Sequencial Heterogênea": {
+      "mean": 74.43181818181817,
+      "std": 1.778690436647559,
+      "min": 70.45454545454545,
+      "max": 77.27272727272727
+    }
+  },
+  "automato": {
+    "por_falante": {
+      "p1": {
+        "label": "Pessoa 1 (Original)",
+        "direita_ok": 23,
+        "direita_tot": 68,
+        "esquerda_ok": 58,
+        "esquerda_tot": 73,
+        "total_ok": 81,
+        "total_palavras": 141,
+        "acc": 57.446808510638306
+      },
+      "p2": {
+        "label": "Pessoa 2 (FLA s023 - M)",
+        "direita_ok": 18,
+        "direita_tot": 52,
+        "esquerda_ok": 26,
+        "esquerda_tot": 46,
+        "total_ok": 44,
+        "total_palavras": 98,
+        "acc": 44.89795918367347
+      },
+      "p3": {
+        "label": "Pessoa 3 (FLA s006 - F)",
+        "direita_ok": 3,
+        "direita_tot": 25,
+        "esquerda_ok": 23,
+        "esquerda_tot": 29,
+        "total_ok": 26,
+        "total_palavras": 54,
+        "acc": 48.148148148148145
+      }
+    },
+    "direita_ok": 44,
+    "direita_tot": 145,
+    "direita_acc": 30.344827586206897,
+    "esquerda_ok": 107,
+    "esquerda_tot": 148,
+    "esquerda_acc": 72.2972972972973,
+    "global_ok": 151,
+    "global_tot": 293,
+    "global_acc": 51.5358361774744
+  }
+}
