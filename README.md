@@ -1,42 +1,59 @@
 # Repositório de Redes Neurais Artificiais (PPGCC / DCCMAPI / UFMA)
 
-Repositório acadêmico desenvolvido para as atividades práticas da disciplina de **Redes Neurais Artificiais** do **Programa de Pós-Graduação em Ciência da Computação (PPGCC / DCCMAPI / UFMA)** sob orientação do **Prof. Dr. Areolino de Almeida Neto**.
+Repositório acadêmico desenvolvido por **Ricardo Diniz Mendes** para as atividades práticas da disciplina de **Redes Neurais Artificiais** do **Programa de Pós-Graduação em Ciência da Computação (PPGCC / DCCMAPI / UFMA)** sob orientação do **Prof. Dr. Areolino de Almeida Neto**.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RicDM/trabalhos_redes_neurais/blob/main/MLP/reconhecimento_fonemas_mlp.ipynb)
+---
+
+## 📚 Trabalhos da Disciplina (Google Colab)
+
+| Trabalho | Arquitetura | Base de Dados | Notebook Interativo |
+| :--- | :--- | :--- | :--- |
+| **Trabalho 1** | Perceptron Multicamadas (**MLP**) | 1 falante (`dados/dataset/`, 423 sílabas) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RicDM/trabalhos_redes_neurais/blob/main/MLP/reconhecimento_fonemas_mlp.ipynb) |
+| **Trabalho 2** | Funções de Base Radial (**RBF**) | 1 falante (`dados/dataset/`, 423 sílabas) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RicDM/trabalhos_redes_neurais/blob/main/RBF/reconhecimento_fonemas_rbf.ipynb) |
+| **Trabalho 3** | Múltiplas RNAs Sem Coordenador (**MRNA**) | 3 falantes (`dados/dataset_3pessoas/`, 879 sílabas) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RicDM/trabalhos_redes_neurais/blob/main/MRNA/reconhecimento_fonemas_mrna.ipynb) |
 
 ---
 
 ## 🏗️ Estrutura do Repositório
 
-O repositório é organizado para que a base de dados acústicos permaneça centralizada em `dados/dataset/`, permitindo que todas as redes neurais desenvolvidas na disciplina (MLP, RBF, MRNA etc.) acessem diretamente os mesmos dados:
-
 ```text
 .
-├── README.md                 # Documentação e instruções de execução
-├── .gitignore                # Configurações de exclusão do Git
+├── README.md                                 # Documentação e links para o Google Colab
+├── .gitignore                                # Configurações de exclusão do Git
 │
-├── dados/                    # Base de dados acústicos compartilhada
-│   └── dataset/              # 423 áudios WAV segmentados das 6 classes de fonemas
-│       ├── DI/               # 68 amostras da sílaba DI
-│       ├── REI/              # 68 amostras da sílaba REI
-│       ├── TA/               # 68 amostras da sílaba TA
-│       ├── ES/               # 73 amostras da sílaba ES
-│       ├── QUER/             # 73 amostras da sílaba QUER
-│       └── DA/               # 73 amostras da sílaba DA
+├── dados/                                    # Bases de dados acústicos (16 kHz, 16-bit PCM mono)
+│   ├── dataset/                              # 423 sílabas (1 falante — Trabalhos 1 e 2)
+│   │   ├── DI/, REI/, TA/                    # 68 amostras por sílaba de DIREITA
+│   │   └── ES/, QUER/, DA/                   # 73 amostras por sílaba de ESQUERDA
+│   └── dataset_3pessoas/                     # 879 sílabas / 293 palavras (3 falantes — Trabalho 3)
+│       ├── DI/, REI/, TA/                    # 145 amostras por sílaba (p1 + p2 + p3)
+│       └── ES/, QUER/, DA/                   # 148 amostras por sílaba (p1 + p2 + p3)
 │
-└── MLP/                      # Trabalho 1: Multilayer Perceptron (MLP)
-    └── reconhecimento_fonemas_mlp.ipynb  # Notebook interativo executado de ponta a ponta
+├── MLP/
+│   └── reconhecimento_fonemas_mlp.ipynb      # Trabalho 1: MLP implementada em NumPy puro
+├── RBF/
+│   └── reconhecimento_fonemas_rbf.ipynb      # Trabalho 2: RBF (WTA + KNN + Ridge) em NumPy puro
+└── MRNA/
+    └── reconhecimento_fonemas_mrna.ipynb     # Trabalho 3: MRNA Sequencial (MLP + RBF + MLP) em NumPy puro
 ```
+
+---
+
+## 🎙️ Base Multi-Falante (Trabalho 3 — MRNA)
+O corpus `dados/dataset_3pessoas/` reúne vocalizações das palavras **DIREITA** e **ESQUERDA** de **3 pessoas diferentes**:
+- **Pessoa 1 (`p1`):** Locutor original (68 `DIREITA`, 73 `ESQUERDA` — 423 sílabas);
+- **Pessoa 2 (`p2`):** Voz masculina `s023` do *FLA-Dataset* (52 `DIREITA`, 46 `ESQUERDA` — 294 sílabas);
+- **Pessoa 3 (`p3`):** Voz feminina `s006` do *FLA-Dataset* (25 `DIREITA`, 29 `ESQUERDA` — 162 sílabas).
 
 ---
 
 ## 🚀 Execução e Reprodutibilidade
 
 ### 1. Execução no Google Colab via GitHub
-O notebook [`reconhecimento_fonemas_mlp.ipynb`](MLP/reconhecimento_fonemas_mlp.ipynb) conta com detecção e configuração automática de ambiente:
-1. Clique no badge **Open in Colab** no topo deste documento.
-2. Ao executar a primeira célula, o Colab detecta o ambiente em nuvem, instala silenciosamente a biblioteca de áudio `soundfile` e clona os dados do repositório (`RicDM/trabalhos_redes_neurais`).
-3. Todas as 22 células podem ser executadas sequencialmente sem necessidade de upload manual de arquivos.
+Todos os notebooks contam com detecção e configuração automática de ambiente:
+1. Clique no badge **Open In Colab** do trabalho desejado na tabela acima.
+2. Ao executar a primeira célula, o Colab detecta o ambiente em nuvem, instala a biblioteca `soundfile` caso necessário e clona automaticamente os dados deste repositório (`RicDM/trabalhos_redes_neurais`).
+3. Execute as células sequencialmente sem necessidade de upload manual de arquivos.
 
 ### 2. Execução Local
 1. Clone o repositório:
@@ -46,15 +63,9 @@ O notebook [`reconhecimento_fonemas_mlp.ipynb`](MLP/reconhecimento_fonemas_mlp.i
    ```
 2. Instale as dependências:
    ```bash
-   pip install numpy scipy matplotlib soundfile scikit-learn torch
+   pip install numpy scipy matplotlib soundfile scikit-learn
    ```
-3. Abra e execute o notebook:
+3. Abra e execute o notebook desejado (por exemplo, o Trabalho 3):
    ```bash
-   cd MLP
-   jupyter notebook reconhecimento_fonemas_mlp.ipynb
+   jupyter notebook MRNA/reconhecimento_fonemas_mrna.ipynb
    ```
-
----
-
-## 🎯 Próximos Trabalhos
-Para os próximos trabalhos da disciplina (como redes RBF ou CNNs), basta criar a respectiva pasta (ex.: `RBF/` ou `CNN/`). Os dados pré-processados já estão prontos e compartilhados em `dados/dataset/`.
